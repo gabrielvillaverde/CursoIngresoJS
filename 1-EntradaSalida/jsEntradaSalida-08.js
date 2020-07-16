@@ -7,13 +7,13 @@ function SacarResto()
 {
 	var dividendo;
 	var divisor;
-	var division;
+	var resultado;
 	var resto;
 	dividendo = txtIdNumeroDividendo.value;
 	divisor = txtIdNumeroDivisor.value;
 	dividendo = parseInt(dividendo);
 	divisor = parseInt(divisor);
-	division = dividendo % divisor;
-	resto = division;
+	resultado = dividendo % divisor;
+	resto = resultado;
 	alert("El resto es: " + resto);
 }
