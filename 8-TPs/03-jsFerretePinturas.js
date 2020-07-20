@@ -10,6 +10,7 @@ function FahrenheitCentigrados ()
     temperaturaFahrenheit = parseInt(temperaturaFahrenheit);
     temperaturaCentigrados = (temperaturaFahrenheit - 32) * 5/9;
     alert(temperaturaFahrenheit + " Fahrenheit son " + temperaturaCentigrados.toFixed(2)+ " centigrados ");
+// El elemento toFixed(2) cumple la función de solo mostrar dos decimales //
 }
 
 function CentigradosFahrenheit () 
