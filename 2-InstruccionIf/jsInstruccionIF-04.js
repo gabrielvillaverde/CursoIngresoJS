@@ -1,13 +1,18 @@
 function mostrar()
 {
-	//tomo la edad  
+
 var edad;
 edad = txtIdEdad.value;
 edad = parseInt(edad);
 
 if(edad > 12)
-	{if(edad < 18)
+{
+	if(edad < 18)
 		alert("Eres un adolescente");
-	}
+}
 		
-}//FIN DE LA FUNCIÓN
+}/*Otra manera de hacerlo:
+
+if(edad>12 && edad<18)
+
+Falta terminar, revisar foto que tomé*/
