@@ -8,11 +8,15 @@ function mostrar()
 	{
 		alert("Es mayor de edad");
 	}
-	if(edad > 12)
-	{
-		if(edad < 18)
-			alert("Es adolescente");
-	}
 	else
+	{
+		if(edad>12 && edad<18)
+		{
+		alert("Es adolescente");
+		}
+		else
+		{
 		alert("Es menor de edad");
+		}
+	}
 }

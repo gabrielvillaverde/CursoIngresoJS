@@ -1,6 +1,5 @@
 function mostrar()
 {
-	//tomo la edad  
 	var edad;
 	edad = txtIdEdad.value;
 	edad = parseInt(edad);
@@ -13,4 +12,4 @@ function mostrar()
 
 
 
-}//FIN DE LA FUNCIÓN
+}
