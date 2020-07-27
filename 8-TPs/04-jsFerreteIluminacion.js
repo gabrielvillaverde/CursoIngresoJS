@@ -82,7 +82,7 @@ function CalcularPrecio ()
     }
 }
 
-/* Funciona el código, pero está mal la lógica:
+/* Mi ejercicio con if y else funciona pero tiene errores:
 function CalcularPrecio () 
 {
     var precioLamparas;

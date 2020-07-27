@@ -10,17 +10,17 @@ function mostrar()
 
 	if(notaExamen >8)
 	{
-		alert("EXCELENTE");
+		alert("EXCELENTE. La nota es: " + notaExamen);
 	}
 	else
 	{
-		if(notaExamen<9 && notaExamen>3)/*El "&& notaExamen>3" se puede omitir para optimizar recursos"*/
+		if(notaExamen<4)
 		{
-			alert("APROBÓ");
+			alert("Vamos, la próxima se puede. La nota es: " + notaExamen);
 		}
 		else
 		{
-			alert("Vamos, la próxima se puede");
+			alert("APROBÓ. La nota es: " + notaExamen);
 		}
 	}
 }	
