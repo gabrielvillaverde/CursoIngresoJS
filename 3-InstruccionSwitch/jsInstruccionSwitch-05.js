@@ -19,11 +19,4 @@ function mostrar()
 			alert("Es de mañana");
 		break;
 	}
-
-
-	
-	
-
-
-
 }

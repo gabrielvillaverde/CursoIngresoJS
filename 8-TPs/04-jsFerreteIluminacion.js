@@ -8,6 +8,244 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó.*/
 
 function CalcularPrecio () 
+
+ /*
+ Ejercicio bien hecho con IF (1):
+ */
+
+{
+    var cantidadLamparas;
+    var marcaLamparas;
+    var precioFinal;
+    var ingresosBrutos;
+
+    cantidadLamparas = txtIdCantidad.value;
+    marcaLamparas = Marca.value;
+
+    cantidadLamparas = parseInt(cantidadLamparas);
+    precioFinal = cantidadLamparas * 35;
+
+    if(cantidadLamparas >= 6)
+    {
+        precioFinal *= 0.5;
+    }
+    else
+    {
+        if (cantidadLamparas == 5)
+        {
+            if(marcaLamparas == "ArgentinaLuz")
+            {
+                precioFinal *=  0.6;     
+            }
+            else
+            {
+                precioFinal *=  0.7;  
+            }
+        }
+        if (cantidadLamparas == 4)
+        {
+            if(marcaLamparas == "ArgentinaLuz" || marcaLamparas == "FelipeLamparas")
+            {
+                precioFinal *= 0.75;     
+            }
+            else
+            {
+                precioFinal *= 0.8;
+            }
+        }
+        if (cantidadLamparas == 3)
+        {
+            if(marcaLamparas == "ArgentinaLuz")
+            {
+                precioFinal *= 0.85;     
+            }
+            else
+            {
+                if(marcaLamparas == "FelipeLamparas")
+                {
+                    precioFinal *= 0.9; 
+                }
+                else
+                {
+                    precioFinal *= 0.95; 
+                }
+            }
+        }
+    }
+    if(precioFinal > 120)
+    {
+        ingresosBrutos = precioFinal * 0.1;
+        precioFinal += ingresosBrutos;
+        alert("Usted pago " + ingresosBrutos + " de IIBB.");
+    }
+    txtIdprecioDescuento.value = precioFinal;
+}
+
+/* Ejercicio bien hecho con IF (2):
+
+{
+    var precioLamparitas;
+    var cantidadLamparitas;
+    var marcaLamparitas;
+    var descuento;
+    var precioTotal;
+    var precioConDescuento;
+    var iibb;
+    var costoIibb;
+        
+    precioLamparitas = 35;
+    iibb = 0.1;
+    costoIibb = 0;
+    cantidadLamparitas = txtIdCantidad.value;
+    cantidadLamparitas = parseInt(cantidadLamparitas);
+    marcaLamparitas = Marca.value;
+    precioTotal = cantidadLamparitas * precioLamparitas;
+
+    if(cantidadLamparitas>2)
+    {
+        if(cantidadLamparitas == 3)
+        {
+            if(marcaLamparitas == "ArgentinaLuz")
+            {
+                descuento = 0.85;
+            }else
+            {
+                if(marcaLamparitas == "FelipeLamparas")
+                {
+                    descuento = 0.9;
+                }else
+                {
+                    descuento = 0.95;
+                }
+            } 
+        }
+        else
+        {
+            if(cantidadLamparitas == 4) 
+            {
+                if(marcaLamparitas == "ArgentinaLuz" || marcaLamparitas == "FelipeLamparas")
+                {
+                    descuento = 0.75;
+                }else
+                {
+                    descuento = 0.80;
+                }    
+            }else
+            {
+                if(cantidadLamparitas == 5)
+                {
+                    if(marcaLamparitas == "ArgentinaLuz")
+                    {
+                        descuento = 0.60;
+                    }else
+                    {
+                        descuento = 0.70;
+                    }
+                }else
+                {
+                    descuento = 0.5;
+                }
+            }            
+        }    
+    precioConDescuento = precioTotal * descuento;  
+    }
+
+    if(precioConDescuento > 120)
+    {
+        costoIibb = precioConDescuento * iibb;      
+        alert("Usted pago $" + costoIibb.toFixed(2) + " de IIBB.")
+    }
+     
+    precioTotal = precioConDescuento + costoIibb;
+    txtIdprecioDescuento.value = precioTotal.toFixed(2);  
+}
+*/    
+
+/*Segundo intento con IF y ELSE, mal hecho:
+{
+    var precio;
+    var cantidad;
+    var marca;
+    var descuento;
+    var precioConDescuento;
+    var precioSinDescuento;
+    var precioFinal;
+    var iibb;
+
+    precio = 35;
+
+    cantidad = document.getElementById("txtIdCantidad").value;
+    cantidad = parseInt(cantidad);
+    marca = document.getElementById("Marca").value;
+
+    precioSinDescuento = precio * cantidad;
+    precioConDescuento = precioSinDescuento - descuento;
+
+    if(cantidad > 5)
+    {
+        descuento = precioSinDescuento * 0.50;
+        precioConDescuento = precioSinDescuento - descuento;
+        txtIdprecioDescuento.value = precioConDescuento;
+    }
+    else
+    {
+        if(cantidad == 5 && marca == "ArgentinaLuz")
+        {
+            descuento = precioSinDescuento * 0.40;
+            precioConDescuento = precioSinDescuento - descuento;
+            txtIdprecioDescuento.value = precioConDescuento;
+        }
+        else
+        {
+            descuento = precioSinDescuento * 0.30;
+            precioConDescuento = precioSinDescuento - descuento;
+            txtIdprecioDescuento.value = precioConDescuento;
+        }
+        if(cantidad == 4 && marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+        {
+            descuento = precioSinDescuento * 0.25;
+            precioConDescuento = precioSinDescuento - descuento;
+            txtIdprecioDescuento.value = precioConDescuento;
+        }
+        else
+        {
+            descuento = precioSinDescuento * 0.20;
+            precioConDescuento = precioSinDescuento - descuento;
+            txtIdprecioDescuento.value = precioConDescuento;
+        }
+        if(cantidad == 3 && marca == "ArgentinaLuz")
+        {
+            descuento = precioSinDescuento * 0.15;
+            precioConDescuento = precioSinDescuento - descuento;
+            txtIdprecioDescuento.value = precioConDescuento;
+        }
+        else
+        {
+            if(cantidad == 3 && marca == "FelipeLamparas")
+            {
+                descuento = precioSinDescuento * 0.10;
+                precioConDescuento = precioSinDescuento - descuento;
+                txtIdprecioDescuento.value = precioConDescuento;
+            }
+            else
+            {
+                descuento = precioSinDescuento * 0.50;
+                precioConDescuento = precioSinDescuento - descuento;
+                txtIdprecioDescuento.value = precioConDescuento;
+            }
+        }
+    }
+    if(precioConDescuento > 120)
+    {
+        iibb = precioConDescuento * 0.10;
+        precioConDescuento + iibb;
+        alert("Usted pagó $" + iibb + " de IIBB.")
+    }
+}
+*/
+
+
+/* Ejercicio hecho con SWITCH
 {
     var precio = 35;
     var cantidad;
@@ -81,8 +319,9 @@ function CalcularPrecio ()
         alert(`Total: $${importeFinal}`);
     }
 }
+*/
 
-/* Mi ejercicio con if y else funciona pero tiene errores:
+/* Primer intento con IF y ELSE, mal hecho:
 function CalcularPrecio () 
 {
     var precioLamparas;

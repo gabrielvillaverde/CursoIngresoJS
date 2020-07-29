@@ -10,7 +10,61 @@ En otoño y primavera: Bariloche tiene un aumento del 10%, Cataratas tiene un au
 
 function mostrar()
 {
-	var estacionIngresada =txtIdEstacion.value;
-	alert(estacionIngresada);
+	var estacion = txtIdEstacion.value;
+	var destino = txtIdDestino.value;
 
+	var precio = 15000;
+	var precioModificado;
+	var precioFinal;
+
+	switch (estacion)
+	{
+		case "Invierno":
+			switch(destino)
+			{
+				case "Bariloche":
+					precioModificado = 1.20;
+				break;
+				case "Cataratas":
+				case "Cordoba":
+					precioModificado = 0.90;
+				break;
+				case "Mar del Plata":
+					precioModificado = 0.80;
+			}
+		break;
+		case "Verano":
+			switch(destino)
+			{
+				case "Bariloche":
+					precioModificado = 0.80;
+				break;				
+				case "Mar del Plata":
+					precioModificado = 1.20;
+				break;
+				case "Cataratas":
+				case "Cordoba":
+					precioModificado = 1.10;
+				break;
+			}
+		break;
+		case "Otoño":
+		case "Primavera":
+			switch(destino)
+			{
+				case "Bariloche":
+				case "Cataratas":
+				case "Mar del Plata":
+					precioModificado = 1.10;
+				break;
+				default:
+					precioModificado = 1;		
+			}
+	}
+	precioFinal = precio * precioModificado;
+	alert(precioFinal);
 }
+
+/* Que el alert esté una sola vez al final del ejercicio.
+Que cada case sirva para setear los descuentos o aumentos.
+Tratar de repetir la menor cantidad de código posible*/
