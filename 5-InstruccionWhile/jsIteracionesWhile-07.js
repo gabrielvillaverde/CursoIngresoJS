@@ -7,12 +7,25 @@ function mostrar()
 	var contador;
 	var acumulador;
 	var respuesta;
-	contador=0;
-	acumulador=0;
-	respuesta='si';
+	var numeroIngresado;
+	contador = 0;
+	acumulador = 0;
+	respuesta = true;
+	var promedio;
 
+	while(respuesta == true)
+	{
+		numeroIngresado = prompt("Ingrese un número:");
+		numeroIngresado = parseInt(numeroIngresado);
 
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/contador;
+		acumulador = acumulador + numeroIngresado; // Otra opción es acumulador += numeroIngresado
 
-}//FIN DE LA FUNCIÓN
+		contador++; // Otra opción es contador = contador + 1; o contador =+ 1;
+
+		respuesta = confirm("¿Desea ingresar otro número?");
+	}
+
+	promedio = acumulador/contador;
+	txtIdSuma.value = acumulador;
+	txtIdPromedio.value = promedio;
+}

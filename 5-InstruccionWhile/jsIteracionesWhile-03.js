@@ -1,8 +1,21 @@
 /*
-al presionar el botón pedir la CLAVE (ayuda: es utn750)*/
+Al presionar el botón, pedir la clave.
+*/
+
 function mostrar()
 {
 	var claveIngresada;
-	claveIngresada = prompt("ingrese el número clave.");
+	claveIngresada = prompt("Ingrese su clave:");
 	
-}//FIN DE LA FUNCIÓN
+	while(claveIngresada != "utn750")
+	{
+		claveIngresada = prompt("Error. Ingrese nuevamente su clave:");
+	}
+
+alert("Clave correcta."); 
+}
+
+/* El alert se ejecutará luego de que se ejecute
+la estructura repetitiva de while. Si el usuario no ingresa
+la clave correcta el alert no se mostrará. */
+

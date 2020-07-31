@@ -244,8 +244,7 @@ function CalcularPrecio ()
 }
 */
 
-
-/* Ejercicio hecho con SWITCH
+/* Ejercicio hecho con SWITCH (1)
 {
     var precio = 35;
     var cantidad;
@@ -320,6 +319,102 @@ function CalcularPrecio ()
     }
 }
 */
+
+/* Ejercicio hecho con SWITCH (2):
+
+{
+	var cantidadLamparas;
+	var precioLampara;
+	var marcaLamparas;
+	var porcentajeDescuento;
+	var porcentajeDecimal;
+	var descuento;
+	var precioSinDescuento;
+	var precioFinal;
+	var ingresosBrutos;
+	var montoIngresosBrutos;
+	var precio;
+
+
+	cantidadLamparas=txtIdCantidad.value;
+	cantidadLamparas=parseInt(cantidadLamparas);
+
+	marcaLamparas=Marca.value;
+
+	precioLampara=35;
+
+	switch (cantidadLamparas)
+	{
+
+		case 1:
+		case 2:
+			porcentajeDescuento=0;
+			break;
+		case 3:
+			switch (marcaLamparas){
+				case "ArgentinaLuz":
+					porcentajeDescuento=15;
+					break;
+				case "FelipeLamparas":
+					porcentajeDescuento=10;
+					break;
+				default:
+					porcentajeDescuento=5;
+					break;
+			}
+			break;
+		case 4:
+			switch(marcaLamparas){
+				case "ArgentinaLuz":
+					porcentajeDescuento=25;
+					break;
+				case "FelipeLamparas"	:
+					porcentajeDescuento=25;
+					break;
+				default:
+					porcentajeDescuento=20;
+					break;	
+			}
+			break;
+		case 5:
+			switch(marcaLamparas){
+				case "ArgentinaLuz":
+					porcentajeDescuento=40;
+					break;
+				default:
+					porcentajeDescuento=30;
+					break;	
+			}
+			break;
+		default:
+			porcentajeDescuento=50;
+			break;	
+	}
+
+	porcentajeDecimal=porcentajeDescuento/100;
+
+	precioSinDescuento=cantidadLamparas*precioLampara;
+
+	descuento=precioSinDescuento*porcentajeDecimal;
+
+	precioFinal=precioSinDescuento-descuento;
+
+	ingresosBrutos=10/100;
+
+	montoIngresosBrutos=precioFinal*ingresosBrutos;
+
+	precioDescuentoIB=precioFinal+montoIngresosBrutos;
+
+		if (precioFinal<120) // no puedo usar switch xq es </>
+	{
+		txtIdprecioDescuento.value=precioFinal;
+	}else
+		{		
+			txtIdprecioDescuento.value=precioDescuentoIB;
+
+			alert("Usted pagó "+montoIngresosBrutos+" de IIBB.");
+		} 	
+}
 
 /* Primer intento con IF y ELSE, mal hecho:
 function CalcularPrecio () 

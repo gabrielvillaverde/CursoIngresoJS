@@ -56,3 +56,7 @@ function mostrar()
 			}
 	}
 }
+
+/* En este caso está bien, pero en casos más complejos reemplazar los 
+alert por la variable "mensaje = Se viaja" o "mensaje = No se viaja",
+y finalmente colocar un alert(mensaje); */
