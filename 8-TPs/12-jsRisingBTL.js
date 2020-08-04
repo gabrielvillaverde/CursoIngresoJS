@@ -16,7 +16,7 @@ function ComenzarIngreso ()
  	var sexo;
  	var estadoCivil;
 	var sueldoBruto;
-	var lejago;
+	var legajo;
 	var nacionalidad;
 
 	edad = prompt("Ingrese su edad:")
@@ -77,20 +77,21 @@ function ComenzarIngreso ()
 
 	txtIdSueldo.value = sueldoBruto;
 
-	lejago = prompt("Ingrese su número de legajo:");
-	lejago = parseInt(lejago);
+	legajo = prompt("Ingrese su número de legajo:");
+	legajo = parseInt(legajo);
 
-	while(lejago <1000 || lejago > 9999 || isNaN(lejago))
+	while(legajo <1000 || legajo > 9999 || isNaN(legajo))
 	{
-		lejago = prompt("Error. Debe ingresar un número de legajo válido.");
-		lejago = parseInt(lejago);
+		legajo = prompt("Error. Debe ingresar un número de legajo válido.");
+		legajo = parseInt(legajo);
 	}
 
-	txtIdLegajo.value = lejago;
+	txtIdLegajo.value = legajo;
 
 	nacionalidad = prompt("Ingrese su nacionalidad: A para argentinos, E para extranjeros y N para nacionalizados.");
-	
-	while(nacionalidad != "A" && nacionalidad != "E" && nacionalidad != "N")//Muestra la letra pero no la descripción del estado civil. Utilizar toLowerCase("A") o upperCase para mayúsculas.
+	nacionalidad = nacionalidad.toUpperCase();
+
+	while(nacionalidad != "A" && nacionalidad != "E" && nacionalidad != "N")
 	{
 		nacionalidad = prompt("Error. Debe ingresar A para argentinos, E para extranjeros y N para nacionalizados.");
 	}

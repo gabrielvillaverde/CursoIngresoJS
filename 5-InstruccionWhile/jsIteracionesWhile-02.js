@@ -4,12 +4,12 @@ con números DESCENDENTES, desde el 10 al 1.
 */
 function mostrar()
 {
-	var contador;
-	contador = 10;
+	var contador = 10; // Declaro variable contador y la inicializo en 10.
 	
-	while(contador>0)
+	while(contador > 0) // Mientras que el contador sea mayor a 0...
 	{
-		document.write(contador);
+		alert(contador); // Si se coloca debajo de la línea de abajo empezará a contar desde 9 y no desde 10.
+		// Otra opción es document.write(contador);
 		contador = contador - 1;
 	}
 }

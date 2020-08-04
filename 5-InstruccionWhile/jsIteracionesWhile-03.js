@@ -5,17 +5,12 @@ Al presionar el botón, pedir la clave.
 function mostrar()
 {
 	var claveIngresada;
-	claveIngresada = prompt("Ingrese su clave:");
+	claveIngresada = prompt("Ingrese su clave:"); // Se pide la clave por prompt.
 	
-	while(claveIngresada != "utn750")
+	while(claveIngresada != "utn750") // Mientras que la clave ingresada NO sea igual a "utn750"...
 	{
-		claveIngresada = prompt("Error. Ingrese nuevamente su clave:");
+		claveIngresada = prompt("Error. Ingrese nuevamente su clave:"); // ...el usuario recibirá un cartel de error pidiendo que ingrese la clave nuevamente.
 	}
 
-alert("Clave correcta."); 
+alert("Clave correcta."); // Si el usuario ingresa la clave correcta, saldrá del loop y se mostrará este alert.
 }
-
-/* El alert se ejecutará luego de que se ejecute
-la estructura repetitiva de while. Si el usuario no ingresa
-la clave correcta el alert no se mostrará. */
-
