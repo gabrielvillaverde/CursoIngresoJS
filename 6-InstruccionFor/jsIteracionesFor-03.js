@@ -3,11 +3,14 @@ Al presionar el botón, pedir la cantidad de veces que quiero repetir el mensaje
 */
 
 function mostrar()
-{
-	var repeticiones = prompt("Ingrese el número de repeticiones");
 
-	for (var i = repeticiones; i > 0; i--){
-		alert("Hola UTN FRA.");
+
+{
+	var repeticiones;
+	repeticiones = parseInt(prompt("Ingrese repeticiones:"));
+
+	for (var i = 0; i < repeticiones; i++){
+		alert(i + "Hola UTN FRA."); // Muestro la cantidad de iteraciones que se dieron y el mensaje "Hola UTN FRA"
 	}
 
 }

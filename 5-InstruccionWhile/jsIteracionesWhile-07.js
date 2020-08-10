@@ -1,9 +1,9 @@
 /*
 Al presionar el botón pedir  números  hasta que el USUARIO QUIERA e informar la suma acumulada y el promedio.
 */
-function mostrar()
 
-{
+function mostrar() {
+	
 	// Mi ejercicio:
 
 	/* Declaración de variables. */
@@ -27,7 +27,7 @@ function mostrar()
 
 		acumulador = acumulador + numeroIngresado; // ---> ...el acumulador será igual a la suma de 0 + el número ingresado por el usuario.
 		contador = contador + 1; // ---> ...el contador será igual a la suma de 0 + 1. Cuando el loop de la suma sea frenado por una respuesta FALSE (es decir, que el usuario no quiera ingresar más números), saldrá de la estructura repetitiva.
-	
+
 		respuesta = confirm("¿Quiere ingresar otro número?") // Si la respuesta es TRUE, el loop se reinicia y sigue pidiendo números. Si es FALSE, sale del loop.
 	}
 

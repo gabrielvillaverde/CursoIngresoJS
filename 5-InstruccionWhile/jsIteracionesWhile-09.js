@@ -1,19 +1,20 @@
 /*
-Al presionar el botón, pedir números hasta que el usuario quiera,
-y mostrar el número máximo y el número mínimo ingresado.
+Al presionar el botón, pedir números hasta que el usuario quiera, y mostrar el número máximo y el número mínimo ingresado.
 */
+
 function mostrar() {
+
 	/* Declaración de variables */
 
 	var numero;
 	var maximo;
 	var minimo;
 	var respuesta = true;
-	var flag = 0;
+	var flag = false; // Se inicializa la variable flag como false. La bandera está baja.
 
 	/* Armo un bucle del tipo: mientras que el usuario quiera (do while) */
 
-	do {
+	do { // Hacer... --->
 		/* [Dentro del bucle]: */
 
 		/* Pido un número */
@@ -21,14 +22,14 @@ function mostrar() {
 		numero = parseInt(numero);
 
 		/* Debo reconocer si estoy pidiendo el número por primera vez. */
-		if (flag == 0) {
-			/* Si es así, inicializo máximo y mínimo */
-			maximo = numero;
-			minimo = numero;
-			flag = 1;
+		if (flag == false) { // Si es la primera vez, es decir, si la bandera está baja...
+			/* Si es así, es decir, es la primera vez, inicializo máximo y mínimo */
+			maximo = numero; // ...el máximo será el primer número ingresado.
+			minimo = numero; // ...y también será el mínimo, porque hasta ahora es el único número ingresado.
+			flag = true; // Para que no entre más veces esta línea de código, levanto la bandera y el flag pasa a valer true.
 		}
 
-		/* Caso contrario, me fijo si tengo un nuevo máximo o un nuevo mínimo.
+		/* Ahora me fijo si tengo un nuevo máximo o un nuevo mínimo.
 		Y los actualizo de ser necesario */
 		if (numero > maximo) {
 			maximo = numero;
@@ -37,10 +38,10 @@ function mostrar() {
 			minimo = numero;
 		}
 
-		respuesta = confirm("¿Quiere ingresar otro número?");
+		respuesta = confirm("¿Quiere ingresar otro número?"); // Si la respuesta es TRUE, repetirá el bucle. Si la respuesta es FALSE, saldrá del bucle.
 	}
 
-	while (respuesta == true);
+	while (respuesta == true); // ---> ...mientras que la respuesta sea TRUE.
 
 	/* [Después del bucle] */
 

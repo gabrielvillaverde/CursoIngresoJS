@@ -1,7 +1,7 @@
 /*
-Al presionar el botón mostrar 10 repeticiones 
-con números DESCENDENTES, desde el 10 al 1.
+Al presionar el botón mostrar 10 repeticiones con números descendentes, desde el 10 al 1.
 */
+
 function mostrar()
 {
 	var contador = 10; // Declaro variable contador y la inicializo en 10.
